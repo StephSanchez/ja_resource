@@ -4,7 +4,7 @@ defmodule JaResource.Mixfile do
   def project do
     [
       app: :ja_resource,
-      version: "0.3.2",
+      version: "0.3.3",
       elixir: "~> 1.2",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -22,12 +22,12 @@ defmodule JaResource.Mixfile do
 
   defp deps do
     [
-      {:ecto, "~> 3.0"},
+      {:ecto, "~> 3.10"},
       {:plug, "~> 1.2"},
-      {:phoenix, "~> 1.1"},
+      {:phoenix, "~> 1.7"},
       {:ja_serializer, "~> 0.9"},
-      {:earmark, "~> 1.0.1", only: :dev},
-      {:ex_doc, "~> 0.13", only: :dev}
+      {:earmark, "~> 1.4", only: :dev},
+      {:ex_doc, "~> 0.30.9", only: :dev}
     ]
   end
 

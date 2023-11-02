@@ -1,6 +1,6 @@
 # JaResource
 
-[![Build Status](https://travis-ci.org/vt-elixir/ja_resource.svg?branch=master)](https://travis-ci.org/vt-elixir/ja_resource)
+[![Build Status](https://github.com/StephSanchez/ja_resource/actions/workflows/elixir.yml/badge.svg)](https://github.com/StephSanchez/ja_resource/actions/workflows/elixir.yml/badge.svg)
 [![Hex Version](https://img.shields.io/hexpm/v/ja_resource.svg)](https://hex.pm/packages/ja_resource)
 
 A behaviour to reduce boilerplate code in your JSON-API compliant Phoenix

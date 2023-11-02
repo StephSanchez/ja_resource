@@ -25,9 +25,11 @@ defmodule JaResource.Mixfile do
       {:ecto, "~> 3.10"},
       {:plug, "~> 1.2"},
       {:phoenix, "~> 1.7"},
-      {:ja_serializer, "~> 0.9"},
+      {:ja_serializer, "~> 0.18.0"},
       {:earmark, "~> 1.4", only: :dev},
-      {:ex_doc, "~> 0.30.9", only: :dev}
+      {:ex_doc, "~> 0.30.9", only: :dev},
+      {:jason, "~> 1.4", only: :test, optional: true},
+      {:poison, "~> 5.0", only: :test, optional: true}
     ]
   end
 

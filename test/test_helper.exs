@@ -110,6 +110,7 @@ end
 
 # We don't actually need to use Ecto.Schema, just implement it's api.
 defmodule JaResourceTest.Post do
+  @derive Jason.Encoder
   defstruct [id: 0, title: "title", body: "body", slug: "slug"]
 
   def changeset(_model, params) do
@@ -126,6 +127,7 @@ defmodule JaResourceTest.Post do
 end
 
 defmodule JaResourceTest.FailingOnDeletePost do
+  @derive Jason.Encoder
   defstruct [id: 0, title: "title", body: "body", slug: "slug"]
 
   def changeset(_model, params) do

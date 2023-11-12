@@ -11,7 +11,8 @@ defmodule JaResource.Mixfile do
       source_url: "https://github.com/vt-elixir/ja_resource",
       package: package(),
       description: description(),
-      deps: deps()
+      deps: deps(),
+      consolidate_protocols: Mix.env() != :test # to avoid protole consolidation during test
     ]
   end
 
@@ -29,7 +30,6 @@ defmodule JaResource.Mixfile do
       {:earmark, "~> 1.4", only: :dev},
       {:ex_doc, "~> 0.30.9", only: :dev},
       {:jason, "~> 1.4", only: :test, optional: true},
-      {:poison, "~> 5.0", only: :test, optional: true}
     ]
   end
 

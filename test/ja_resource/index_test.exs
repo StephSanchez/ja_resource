@@ -67,7 +67,7 @@ defmodule JaResource.IndexTest do
     assert response.status == 200
 
     # Note, not real json-api spec view
-    json = Poison.decode!(response.resp_body, keys: :atoms!)
+    json = Jason.decode!(response.resp_body, keys: :atoms!)
     assert [_, _] = json[:data]
   end
 
@@ -92,7 +92,7 @@ defmodule JaResource.IndexTest do
   test "query errors are handled correctly" do
     conn = prep_conn(:get, "/posts")
     response = Index.call(QueryErrorController, conn)
-    json = Poison.decode!(response.resp_body, keys: :atoms!)
+    json = Jason.decode!(response.resp_body, keys: :atoms!)
     assert json[:errors] == %{details: "An error"}
     assert response.status == 500
   end

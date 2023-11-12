@@ -43,11 +43,11 @@ defmodule JaResourceTest.Repo do
 
   def get(_query, id) do
     Agent.get __MODULE__, fn(state) ->
-      Enum.find state, fn(record) ->
+            Enum.find state, fn(record) ->
         record.id == id
       end
     end
-  end
+      end
 
   def insert(%Ecto.Changeset{valid?: true} = changeset) do
     insert(changeset.data)
@@ -110,7 +110,7 @@ end
 
 # We don't actually need to use Ecto.Schema, just implement it's api.
 defmodule JaResourceTest.Post do
-  @derive Jason.Encoder
+  @derive {Jason.Encoder, only: [:id, :title, :body, :slug]}
   defstruct [id: 0, title: "title", body: "body", slug: "slug"]
 
   def changeset(_model, params) do
@@ -127,7 +127,7 @@ defmodule JaResourceTest.Post do
 end
 
 defmodule JaResourceTest.FailingOnDeletePost do
-  @derive Jason.Encoder
+  @derive {Jason.Encoder, only: [:id, :title, :body, :slug]}
   defstruct [id: 0, title: "title", body: "body", slug: "slug"]
 
   def changeset(_model, params) do

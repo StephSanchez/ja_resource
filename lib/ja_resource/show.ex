@@ -85,5 +85,8 @@ defmodule JaResource.Show do
     )
   end
 
-  def respond(model, conn, controller), do: controller.render_show(conn, model)
+  def respond(model, conn, controller) do
+    opts = controller.serialization_opts(conn, conn.query_params, model)
+    controller.render_index(conn, model, opts)
+  end
 end
